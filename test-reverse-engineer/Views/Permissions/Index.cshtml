@@ -13,6 +13,9 @@
     <thead>
         <tr>
             <th>
+                @Html.DisplayNameFor(model => model.PermissionId)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.PermissionName)
             </th>
             <th>
@@ -27,6 +30,9 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PermissionId)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.PermissionName)
             </td>
