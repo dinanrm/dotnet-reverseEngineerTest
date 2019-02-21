@@ -5,6 +5,12 @@ namespace test_reverse_engineer.Models
 {
     public partial class Assign
     {
+        public Assign()
+        {
+            AssignCreatedDate = DateTime.Now;
+            AssignModifiedDate = DateTime.Now;
+        }
+
         public int AssignId { get; set; }
         public int? UserId { get; set; }
         public int? RoleId { get; set; }

@@ -5,6 +5,12 @@ namespace test_reverse_engineer.Models
 {
     public partial class Document
     {
+        public Document()
+        {
+            DocCreatedDate = DateTime.Now;
+            DocModifiedDate = DateTime.Now;
+        }
+
         public int DocId { get; set; }
         public int? ProjectId { get; set; }
         public string DocName { get; set; }

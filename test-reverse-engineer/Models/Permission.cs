@@ -8,6 +8,8 @@ namespace test_reverse_engineer.Models
         public Permission()
         {
             RoleHasPermission = new HashSet<RoleHasPermission>();
+            PermissionCreatedDate = DateTime.Now;
+            PermissionModifiedDate = DateTime.Now;
         }
 
         public int PermissionId { get; set; }

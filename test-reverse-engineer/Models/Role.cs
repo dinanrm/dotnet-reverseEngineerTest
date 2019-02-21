@@ -9,6 +9,8 @@ namespace test_reverse_engineer.Models
         {
             Assign = new HashSet<Assign>();
             RoleHasPermission = new HashSet<RoleHasPermission>();
+            RoleCreatedDate = DateTime.Now;
+            RoleModifiedDate = DateTime.Now;
         }
 
         public int RoleId { get; set; }

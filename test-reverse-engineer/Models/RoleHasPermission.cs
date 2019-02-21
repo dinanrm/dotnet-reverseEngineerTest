@@ -5,6 +5,12 @@ namespace test_reverse_engineer.Models
 {
     public partial class RoleHasPermission
     {
+        public RoleHasPermission()
+        {
+            RhpCreatedDate = DateTime.Now;
+            RhpModifiedDate = DateTime.Now;
+        }
+
         public int RhpId { get; set; }
         public int RoleId { get; set; }
         public int PermissionId { get; set; }
