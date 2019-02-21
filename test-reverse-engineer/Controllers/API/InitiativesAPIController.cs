@@ -9,7 +9,7 @@ using test_reverse_engineer.Models;
 
 namespace test_reverse_engineer.Controllers.API
 {
-    [Route("api/[controller]")]
+    [Route("api/inititatives")]
     [ApiController]
     public class InitiativesAPIController : ControllerBase
     {

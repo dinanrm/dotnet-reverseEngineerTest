@@ -9,7 +9,7 @@ using test_reverse_engineer.Models;
 
 namespace test_reverse_engineer.Controllers.API
 {
-    [Route("api/[controller]")]
+    [Route("api/users")]
     [ApiController]
     public class UsersAPIController : ControllerBase
     {
@@ -41,6 +41,39 @@ namespace test_reverse_engineer.Controllers.API
             return user;
         }
 
+        // POST: api/Users/Register
+        [HttpPost("{action}")]
+        public async Task<ActionResult<User>> Register(User user)
+        {
+            var result = await _context.User.FirstOrDefaultAsync(u =>
+                u.UserName == user.UserName || u.UserEmail == user.UserEmail);
+
+            if (result != null)
+            {
+                return Conflict();
+            }
+
+            _context.User.Add(user);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction("GetUser", new { id = user.UserId }, user);
+        }
+
+        // POST: api/Users/Login
+        [HttpPost("{action}")]
+        public async Task<ActionResult<User>> Login(User user)
+        {
+            var result = await _context.User.FirstOrDefaultAsync(u =>
+                u.UserName == user.UserName && u.UserPassword == user.UserPassword);
+
+            if (result == null)
+            {
+                return NotFound();
+            }
+
+            return result;
+        }
+
         // PUT: api/UsersAPI/5
         [HttpPut("{id}")]
         public async Task<IActionResult> PutUser(int id, User user)
@@ -69,16 +102,6 @@ namespace test_reverse_engineer.Controllers.API
             }
 
             return NoContent();
-        }
-
-        // POST: api/UsersAPI
-        [HttpPost]
-        public async Task<ActionResult<User>> PostUser(User user)
-        {
-            _context.User.Add(user);
-            await _context.SaveChangesAsync();
-
-            return CreatedAtAction("GetUser", new { id = user.UserId }, user);
         }
 
         // DELETE: api/UsersAPI/5
