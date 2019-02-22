@@ -4,6 +4,7 @@
     <TargetFramework>netcoreapp2.2</TargetFramework>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
     <RootNamespace>test_reverse_engineer</RootNamespace>
+    <UserSecretsId>f3942032-e3a4-485f-a338-5b996b42d2d0</UserSecretsId>
   </PropertyGroup>
 
 
