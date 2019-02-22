@@ -56,7 +56,7 @@ namespace test_reverse_engineer.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("DocId,ProjectId,DocName,DocSize,DocFormat,DocStream,DocCategory,DocDescription,DocStatus,DocCreatedDate,DocModifiedDate")] Document document)
+        public async Task<IActionResult> Create([Bind("DocId,ProjectId,DocName,DocCategory,DocDescription,DocStatus,DocStream,DocCreatedDate,DocModifiedDate")] Document document)
         {
             if (ModelState.IsValid)
             {
@@ -90,7 +90,7 @@ namespace test_reverse_engineer.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("DocId,ProjectId,DocName,DocSize,DocFormat,DocStream,DocCategory,DocDescription,DocStatus,DocCreatedDate,DocModifiedDate")] Document document)
+        public async Task<IActionResult> Edit(int id, [Bind("DocId,ProjectId,DocName,DocCategory,DocDescription,DocStatus,DocStream,DocCreatedDate,DocModifiedDate")] Document document)
         {
             if (id != document.DocId)
             {

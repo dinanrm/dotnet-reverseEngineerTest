@@ -121,11 +121,6 @@ namespace test_reverse_engineer.Models
                     .HasColumnName("DOC_DESCRIPTION")
                     .HasColumnType("text");
 
-                entity.Property(e => e.DocFormat)
-                    .HasColumnName("DOC_FORMAT")
-                    .HasMaxLength(10)
-                    .IsUnicode(false);
-
                 entity.Property(e => e.DocModifiedDate)
                     .HasColumnName("DOC_MODIFIED_DATE")
                     .HasColumnType("datetime");
@@ -134,10 +129,6 @@ namespace test_reverse_engineer.Models
                     .HasColumnName("DOC_NAME")
                     .HasMaxLength(50)
                     .IsUnicode(false);
-
-                entity.Property(e => e.DocSize)
-                    .HasColumnName("DOC_SIZE")
-                    .HasColumnType("decimal(18, 0)");
 
                 entity.Property(e => e.DocStatus)
                     .HasColumnName("DOC_STATUS")
