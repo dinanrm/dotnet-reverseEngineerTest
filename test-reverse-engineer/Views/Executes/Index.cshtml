@@ -13,6 +13,9 @@
     <thead>
         <tr>
             <th>
+                @Html.DisplayNameFor(model => model.ExecuteId)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.ExecuteLessonLearned)
             </th>
             <th>
@@ -24,6 +27,9 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ExecuteId)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.ExecuteLessonLearned)
             </td>
