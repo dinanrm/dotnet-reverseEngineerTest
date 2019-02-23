@@ -16,6 +16,7 @@ namespace test_reverse_engineer.Models
         }
 
         public virtual DbSet<Assign> Assign { get; set; }
+        public virtual DbSet<Category> Category { get; set; }
         public virtual DbSet<Closing> Closing { get; set; }
         public virtual DbSet<Document> Document { get; set; }
         public virtual DbSet<Execute> Execute { get; set; }
@@ -74,6 +75,33 @@ namespace test_reverse_engineer.Models
                     .WithMany(p => p.Assign)
                     .HasForeignKey(d => d.UserId)
                     .HasConstraintName("FK_ASSIGN_RELATIONS_USER");
+            });
+
+            modelBuilder.Entity<Category>(entity =>
+            {
+                entity.ToTable("CATEGORY");
+                
+                entity.Property(e => e.CategoryId)
+                .HasColumnName("CATEGORY_ID");
+
+                entity.Property(e => e.CategoryName)
+                .HasColumnName("CATEGORY_NAME")
+                .HasMaxLength(30)
+                .IsUnicode(false);
+
+                entity.Property(e => e.CategoryDescription)
+                .HasColumnName("CATEGORY_DESCRIPTION")
+                .HasColumnType("text");
+
+                entity.Property(e => e.FileStream);
+
+                entity.Property(e => e.CategoryCreatedDate)
+                .HasColumnName("CATEGORY_CREATED_DATE")
+                .HasColumnType("datetime");
+
+                entity.Property(e => e.CategoryModifiedDate)
+                .HasColumnName("CATEGORY_MODIFIED_DATE")
+                .HasColumnType("datetime");
             });
 
             modelBuilder.Entity<Closing>(entity =>

@@ -8,6 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20190222073743_Initital-Create.cs" />
+    <Compile Remove="Migrations\20190222073743_Initital-Create.Designer.cs" />
+    <Compile Remove="Migrations\20190222081128_ModifyDocument.cs" />
+    <Compile Remove="Migrations\20190222081128_ModifyDocument.Designer.cs" />
     <Compile Remove="Migrations\20190222081742_CreateCategory.cs" />
     <Compile Remove="Migrations\20190222081742_CreateCategory.Designer.cs" />
     <Compile Remove="Migrations\20190222081843_CreateCategory.cs" />
@@ -16,6 +20,12 @@
     <Compile Remove="Migrations\20190222082132_CreateCategory.Designer.cs" />
     <Compile Remove="Migrations\20190222082257_CreateCategory.cs" />
     <Compile Remove="Migrations\20190222082257_CreateCategory.Designer.cs" />
+    <Compile Remove="Migrations\20190222091949_CreateCategory.cs" />
+    <Compile Remove="Migrations\20190222091949_CreateCategory.Designer.cs" />
+    <Compile Remove="Migrations\20190222092532_CreateCategory.cs" />
+    <Compile Remove="Migrations\20190222092532_CreateCategory.Designer.cs" />
+    <Compile Remove="Migrations\20190222092635_CreateCategory.cs" />
+    <Compile Remove="Migrations\20190222092635_CreateCategory.Designer.cs" />
   </ItemGroup>
 
 
@@ -23,6 +33,11 @@
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.0" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Folder Include="Migrations\" />
   </ItemGroup>
 
 </Project>
