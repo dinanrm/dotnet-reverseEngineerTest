@@ -8,6 +8,9 @@ namespace test_reverse_engineer.Models
         public User()
         {
             Assign = new HashSet<Assign>();
+
+            UserCreatedDate = DateTime.Now;
+            UserModifiedDate = DateTime.Now;
         }
 
         public int UserId { get; set; }

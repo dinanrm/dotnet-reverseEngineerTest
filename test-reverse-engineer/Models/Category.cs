@@ -8,6 +8,9 @@ namespace test_reverse_engineer.Models
         public Category()
         {
             Document = new HashSet<Document>();
+
+            CategoryCreatedDate = DateTime.Now;
+            CategoryModifiedDate = DateTime.Now;
         }
 
         public int CategoryId { get; set; }

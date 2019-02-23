@@ -13,6 +13,9 @@ namespace test_reverse_engineer.Models
             Execute = new HashSet<Execute>();
             Initiative = new HashSet<Initiative>();
             Plan = new HashSet<Plan>();
+
+            ProjectCreatedDate = DateTime.Now;
+            ProjectModifiedDate = DateTime.Now;
         }
 
         public int ProjectId { get; set; }
