@@ -1,0 +1,173 @@
+﻿@model IEnumerable<test_reverse_engineer.Models.Initiative>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.InitiativeTitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PreparedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BackgroundInformation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ObjectiveBenefit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LandCompensation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LandImprovement)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Building)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Infrastructure)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PlantMachine)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Equipment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ExpenseUnderDevelopment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WorkingCapital)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Contingency)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Total)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Timeline)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RequestedBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AcknowledgedBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AgreedBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ExecutiveSummary)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProjectDefinition)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vision)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Objective)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InitiativeLessonLearned)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Project)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.InitiativeTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PreparedDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BackgroundInformation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ObjectiveBenefit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LandCompensation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LandImprovement)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Building)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Infrastructure)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlantMachine)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Equipment)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ExpenseUnderDevelopment)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WorkingCapital)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Contingency)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Total)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Timeline)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RequestedBy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AcknowledgedBy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AgreedBy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ExecutiveSummary)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProjectDefinition)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Vision)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Objective)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InitiativeLessonLearned)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Project.ProjectId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.InitiativeId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.InitiativeId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.InitiativeId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

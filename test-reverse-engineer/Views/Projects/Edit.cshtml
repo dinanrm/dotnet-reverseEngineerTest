@@ -1,0 +1,79 @@
+﻿@model test_reverse_engineer.Models.Project
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Project</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ProjectId" />
+            <div class="form-group">
+                <label asp-for="InitiativeId" class="control-label"></label>
+                <select asp-for="InitiativeId" class="form-control" asp-items="ViewBag.InitiativeId"></select>
+                <span asp-validation-for="InitiativeId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ExecuteId" class="control-label"></label>
+                <select asp-for="ExecuteId" class="form-control" asp-items="ViewBag.ExecuteId"></select>
+                <span asp-validation-for="ExecuteId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClosingId" class="control-label"></label>
+                <select asp-for="ClosingId" class="form-control" asp-items="ViewBag.ClosingId"></select>
+                <span asp-validation-for="ClosingId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PlanId" class="control-label"></label>
+                <select asp-for="PlanId" class="form-control" asp-items="ViewBag.PlanId"></select>
+                <span asp-validation-for="PlanId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProjectTitle" class="control-label"></label>
+                <input asp-for="ProjectTitle" class="form-control" />
+                <span asp-validation-for="ProjectTitle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProjectCategory" class="control-label"></label>
+                <input asp-for="ProjectCategory" class="form-control" />
+                <span asp-validation-for="ProjectCategory" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProjectDescription" class="control-label"></label>
+                <input asp-for="ProjectDescription" class="form-control" />
+                <span asp-validation-for="ProjectDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProjectStatus" class="control-label"></label>
+                <input asp-for="ProjectStatus" class="form-control" />
+                <span asp-validation-for="ProjectStatus" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProjectCreatedDate" class="control-label"></label>
+                <input asp-for="ProjectCreatedDate" class="form-control" />
+                <span asp-validation-for="ProjectCreatedDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProjectModifiedDate" class="control-label"></label>
+                <input asp-for="ProjectModifiedDate" class="form-control" />
+                <span asp-validation-for="ProjectModifiedDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

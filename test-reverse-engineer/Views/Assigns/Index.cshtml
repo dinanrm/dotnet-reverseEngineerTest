@@ -1,0 +1,59 @@
+﻿@model IEnumerable<test_reverse_engineer.Models.Assign>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AssignCreatedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AssignModifiedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Project)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Role)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.User)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AssignCreatedDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AssignModifiedDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Project.ProjectId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Role.RoleId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.User.UserId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.AssignId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.AssignId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.AssignId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
